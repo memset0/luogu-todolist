@@ -1,0 +1,65 @@
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>Luogu Todo</title>
+    <link rel="shortcut icon" href="https://memset0.cn/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-red.min.css">
+    <style>
+		/* main {background: #424242} */
+		.demo-footer {padding-left: 40px}
+		.demo-content h3 {margin-top: 48px}
+		.demo-table td {text-align: left!important}
+		.demo-header .mdl-layout__header-row {padding-left: 40px;background: #3F51B5; color: #fff}
+		.demo-footer .mdl-mini-footer--link-list a {font-size: 13px}
+		.demo-layout.is-small-screen .demo-content {padding: 40px 28px}
+		.demo-content {border-radius:2px;padding: 80px 56px;margin-bottom: 300px}
+		.demo-container {max-width: 1600px;width: calc(100% - 16px);margin: 0 auto}
+		.demo-main {margin-top: -35vh;-webkit-flex-shrink: 0;-ms-flex-negative: 0;flex-shrink: 0;}
+    .demo-ribbon {width: 100%;height: 40vh;background-color: #3F51B5;-webkit-flex-shrink: 0;-ms-flex-negative: 0;flex-shrink: 0}
+    .table-status {padding:10px;font-weight:900;text-decoration:none}
+    .table-link {text-decoration: none; color: #424242;}
+    </style>
+  </head>
+  <body>
+    <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+      <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Todolist</span>
+        </div>
+      </header>
+	  <div class="demo-ribbon"></div>
+      <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+		  <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+		  
+<table class="demo-table demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col mdl-data-table mdl-js-data-table">
+<thead>
+<tr>
+  <th class="mdl-data-table__cell--non-numeric" style="width: 10px">Status</th>
+<th class="mdl-data-table__cell--non-numeric" style="width: 20px">ID</th>
+<th class="mdl-data-table__cell--non-numeric">Problem</th>
+</tr>
+</thead>
+<tbody>
+
+{{ table main }}
+
+</tbody>
+</table>
+		</div>
+        <footer class="demo-footer mdl-mega-footer">
+          <div class="mdl-mini-footer--left-section">
+            <a href="https://memset0.cn"style="text-decoration:none;font-weight:900;color:#aaa">
+              @memset0
+            </a>
+            2019.
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  </body>
+</html>
