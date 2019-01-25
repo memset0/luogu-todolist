@@ -1,5 +1,6 @@
 import spider, webserver
-from http.server import BaseHTTPRequestHandler,HTTPServer
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
 
 class RequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -9,6 +10,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(content)))
         self.end_headers()
         self.wfile.write(content)
+
 
 if __name__ == '__main__':
     serverAddress = ('', 2333)
