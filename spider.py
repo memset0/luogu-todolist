@@ -28,13 +28,16 @@ class Todo:
 	def toStr(self):
 		return '[{prob}] {status}'.format(prob=self.prob, status=self.status)
 	def toTable(self):
-		return '''
+		answer = '''
 <tr>
 	<td><a href="https://www.luogu.org/recordnew/lists?uid={uid}&pid={prob}" class="table-status">{status}</a></td>
 	<td><a href="https://www.luogu.org/problemnew/show/{prob}" class="table-link">{prob}</a></td>
 	<td><a href="https://www.luogu.org/problemnew/show/{prob}" class="table-link">{title}</a></td>
 </tr>
 		'''.format(prob=self.prob, status=getStatus(self.status), title=self.title, uid=uid).replace('\n', '').replace('	', '')
+		if self.status:
+			answer = answer.replace('<tr>', '<tr style="background: #cfc;">')
+		return answer
 	def __init__(self, prob):
 		self.prob = prob
 		self.title = getTitle(prob)
