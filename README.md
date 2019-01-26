@@ -24,6 +24,8 @@
 * 运行 `python3 host.py`
 * 在浏览器打开 `http://localhost:2333`
 
+更多细节请参考 Wiki
+
 # Demo
 
 ![](https://i.loli.net/2019/01/25/5c4adb75c188f.png)
