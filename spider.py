@@ -67,9 +67,11 @@ def getTodoList():
 	text = re.sub(r'#[\s\S]*?\n', '', text)
 	find = re.split(r'[\s]', text)
 	prob = []
+	added = []
 	for it in find:
-		if it != '':
+		if it != '' and (not it in added):
 			prob.append(Todo(it))
+			added.append(it)
 	return prob
 
 def update():
