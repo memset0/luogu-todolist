@@ -7,7 +7,9 @@ def read(path):
 	return t
 
 def index():
-	spider.update()
-	table = read('web/table.html')
-	text = read('web/index.html').replace('{{ table main }}', table)
+	text = read('web/index.html')
+	info = spider.update()
+	info['table main'] = read('web/table.html')
+	for key, val in info.items():
+		text = text.replace('{{ %s }}' % key, str(val))
 	return text

@@ -77,14 +77,23 @@ def getTodoList():
 def update():
 	global titleList
 	titleList = yaml.load(open('cache/title.yml', 'r+').read())
+	ac_counter    = 0
+	total_counter = 0
 	ac   = getACList()
 	todo = getTodoList()
 	tableFile = open('web/table.html', 'w+')
 	for it in todo:
+		total_counter += 1
 		it.status = it.prob in ac
+		if it.status:
+			ac_counter += 1
 		# print(it.toStr())
 		tableFile.write(it.toTable())
 	tableFile.close()
+	return {
+		'ac counter': ac_counter,
+		'total counter': total_counter,
+	}
 
 init()
 update()
