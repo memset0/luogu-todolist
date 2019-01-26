@@ -24,6 +24,15 @@
 * 运行 `python3 host.py`
 * 在浏览器打开 `http://localhost:2333`
 
+# config.yml 配置指南
+
+按照如下方法，您就可以获取您的账户下所有题目的 AC 状态：
+
+* `userid`请更改为您账户的 uid
+* `clientid`可以按如下方式获取（以Chrome浏览器为例）：
+  1. 点击地址栏左边的锁，然后点击cookie，在正在使用的cookie中找到`__client_id`，双击其内容后复制即可。
+  2. 或者按F12进入开发者模式，点击开发者模式上方Network一栏，按F5刷新页面，在加载项中找到www.luogu.org，点击后选择Header一栏，在其中显示的cookie信息中找到`__client_id`后复制即可。
+
 # Demo
 
 ![](https://i.loli.net/2019/01/25/5c4adb75c188f.png)
