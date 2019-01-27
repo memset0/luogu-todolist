@@ -14,8 +14,10 @@
 # 应用场景
 
 * 有大量的题目需要存储在 Todo List 中
-* 需要利用脚本等方式批量管理 Todo List
-* 需要将自己的 Todo List 以文本的方式传给他人
+* 利用脚本等方式批量管理 Todo List
+* 将自己的 Todo List 以文本的方式传给他人
+* 对 Todo List 进行方便的备份
+* 同机房同学共用 Todo List （可以把 `todo.list` 局域网共享然后改一下代码里的引用目录）
 
 # 安装
 
