@@ -37,9 +37,10 @@ class Todo:
 		'''.format(prob=self.prob, status=getStatus(self.status), title=self.title, uid=uid).replace('\n', '').replace('	', '')
 		if self.status or 'pass' in self.tags:
 			answer = answer.replace('<tr>', '<tr style="background: #cfc;">')
+		elif 'warn' in self.tags:
+			answer = answer.replace('<tr>', '<tr style="background: #fcc;">')
 		return answer
 	def addTag(self, tag):
-		print('add tag', tag)
 		self.tags.append(tag)
 	def __init__(self, prob):
 		self.tags    = []
