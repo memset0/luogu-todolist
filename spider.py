@@ -35,12 +35,16 @@ class Todo:
 	<td><a href="https://www.luogu.org/problemnew/show/{prob}" class="table-link">{title}</a></td>
 </tr>
 		'''.format(prob=self.prob, status=getStatus(self.status), title=self.title, uid=uid).replace('\n', '').replace('	', '')
-		if self.status:
+		if self.status or 'pass' in self.tags:
 			answer = answer.replace('<tr>', '<tr style="background: #cfc;">')
 		return answer
+	def addTag(self, tag):
+		print('add tag', tag)
+		self.tags.append(tag)
 	def __init__(self, prob):
-		self.prob = prob
-		self.title = getTitle(prob)
+		self.tags    = []
+		self.prob   = prob
+		self.title  = getTitle(prob)
 		self.status = False
 
 def init():
@@ -69,7 +73,11 @@ def getTodoList():
 	prob = []
 	added = []
 	for it in find:
-		if it != '' and (not it in added):
+		if it == '':
+			continue
+		if it[0] == '[':
+			prob[-1].addTag(it[1:-1])
+		elif not it in added:
 			prob.append(Todo(it))
 			added.append(it)
 	return prob
@@ -85,7 +93,7 @@ def update():
 	for it in todo:
 		total_counter += 1
 		it.status = it.prob in ac
-		if it.status:
+		if it.status or 'pass' in it.tags:
 			ac_counter += 1
 		# print(it.toStr())
 		tableFile.write(it.toTable())
