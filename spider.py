@@ -75,7 +75,7 @@ def getACList():
 
 def getTodoList():
 	text = readFile('todo.list')
-	text = re.sub(r'#[\s\S]*?\n', '', text)
+	text = re.sub(r'#[\s\S]*?$', '', text, flags=re.MULTILINE)
 	find = re.split(r'[\s]', text)
 	prob = []
 	added = []
